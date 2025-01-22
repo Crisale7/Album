@@ -1,0 +1,39 @@
+<!-- album.page.html -->
+<ion-header class="fancy-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <div class="header-content">
+      <div class="header-decorations">
+        <span class="decoration">❀</span>
+        <span class="sparkles">✧</span>
+      </div>
+      <div class="title-container">
+        <span class="decorative-line left">━━━</span>
+        <span>Nuestro Álbum de Amor</span>
+        <span class="decorative-line right">━━━</span>
+      </div>
+      <div class="header-decorations">
+        <span class="sparkles">✧</span>
+        <span class="decoration">❀</span>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="album-container">
+    <div class="photo-grid">
+      <div class="photo-card" *ngFor="let photo of photos">
+        <div class="photo-frame">
+          <img [src]="photo.url" [alt]="photo.description">
+          <div class="photo-details">
+            <span class="photo-date">{{photo.date}}</span>
+            <p class="photo-description">{{photo.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

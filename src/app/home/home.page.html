@@ -1,20 +1,94 @@
-<ion-header [translucent]="true">
+<!-- Actualiza esta parte en home.page.html -->
+<ion-header [translucent]="true" class="fancy-header">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <div class="header-content">
+      <div class="header-decorations">
+        <div class="decoration left">❀</div>
+        <div class="sparkles">✧</div>
+      </div>
+      
+      <ion-title>
+        <div class="title-container">
+          <span class="decorative-line left">━━━</span>
+          <ion-icon name="heart" class="header-heart left"></ion-icon>
+          Nuestro hermoso camino
+          <ion-icon name="heart" class="header-heart right"></ion-icon>
+          <span class="decorative-line right">━━━</span>
+        </div>
+      </ion-title>
+
+      <div class="header-decorations">
+        <div class="sparkles">✧</div>
+        <div class="decoration right">❀</div>
+      </div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <div class="title-section">
+      <h1 class="title">
+        <ion-icon name="heart"></ion-icon>
+        Feliz 22
+        <ion-icon name="heart"></ion-icon>
+      </h1>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="carousel-section">
+      <div class="carousel-container">
+        <img [src]="images[currentImageIndex]" class="carousel-image" alt="Memories">
+        <div class="hearts-overlay">
+          <ion-icon name="heart" class="floating-heart" *ngFor="let i of [1,2,3,4,5]"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="counter-section">
+      <div class="time-grid">
+        <div class="time-box">
+          <span class="time-value">{{timeDifference.years}}</span>
+          <span class="time-label">Años</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value">{{timeDifference.months}}</span>
+          <span class="time-label">Meses</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value">{{timeDifference.days}}</span>
+          <span class="time-label">Días</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value">{{timeDifference.hours}}:{{timeDifference.minutes}}</span>
+          <span class="time-label">Horas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-section">
+      <div class="love-quote">
+        <p>{{loveQuote}}</p>
+        <div class="quote-hearts">
+          <ion-icon name="heart"></ion-icon>
+          <ion-icon name="heart"></ion-icon>
+          <ion-icon name="heart"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <div class="memories-box">
+        <h3>Nuestros Momentos Especiales</h3>
+        <div class="memory-bubbles">
+          <div class="memory-bubble">
+            <ion-icon name="star"></ion-icon>
+            <div class="memory-bubble" [routerLink]="['/album']">
+              <ion-icon name="images-outline"></ion-icon>
+              Álbum de Fotos
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </ion-content>
