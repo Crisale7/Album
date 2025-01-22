@@ -1,0 +1,7 @@
+{
+  "name": "amor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
